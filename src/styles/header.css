@@ -1,0 +1,26 @@
+.header {
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.cart-button {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-right: 50px;
+}
+
+.cart-icon {
+  margin-right: 10px;
+}
+
+.ML-Icon {
+  margin-left: 50px;
+}
+
+.cart-itens-count {
+  font-size: 25px;
+}
