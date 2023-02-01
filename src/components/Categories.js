@@ -6,7 +6,6 @@ import { getCategories } from '../services/api';
 function Categories() {
 
   const data = useContext(ProductsContext);
-  console.log(data);
   const [categoriesData, setCategoriesData] = useState([]);
 
   const requestCategoriesData = async () => {
