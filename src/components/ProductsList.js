@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ProductsContext from "../context/ProductsContext";
 import ProductCard from "./ProductCard";
+import "../styles/productcard.css";
 
 function ProductsList() {
   const { products } = useContext(ProductsContext);
@@ -9,7 +10,7 @@ function ProductsList() {
     <main>
       <h1>Lista de produtos</h1>
       { products.length > 0 
-        ? <ul>
+        ? <ul className="products-list">
         {
           products.map((element, index) => {
            if(index >= 0) {

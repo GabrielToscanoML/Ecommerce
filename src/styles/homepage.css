@@ -2,10 +2,21 @@
   display: flex;
 }
 
+.main-content > :first-child {
+  width: 30%;
+  /* background-color: red; */
+}
+
+.main-content > :last-child {
+  width: 70%;
+  /* background-color: blue; */
+}
+
 ul {
   list-style-type: none;
 }
 
 .categories-content {
   background-color: blue;
+  width: 1000px;
 }

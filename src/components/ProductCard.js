@@ -2,16 +2,21 @@ import React from "react";
 
 function ProductCard(props) {
   return (
-    <div>
-        <p> { props.title } </p>
-        <img
+    <div className="card">
+       <img
             src={ props.thumbnail }
             alt={ props.title }
-            width="200px"
+            className="card-img"
         />
-        <p> { props.price } </p>
+        <div className="card-info">
+          <p className="text-title"> { props.title } </p>
+          <p className="text-body"> descrição do produto </p>
+        </div>
+        <div class="card-footer">
+          <span class="text-title">${ props.price }</span>
+          <div class="card-button">button</div>
+        </div>
         {(props.frete.free_shipping) && <p>Frete Grátis</p>}
-        <p> descrição do produto </p>
     </div>
   );
 }
