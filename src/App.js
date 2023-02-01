@@ -6,11 +6,11 @@ import ShoppingCart from './components/ShoppingCart';
 
 function App() {
   return (
-   <Switch>
-      <Route exact path="/" component={ Home } />
-      <Route exact path="/shoppingCart" component={ ShoppingCart } />
-      <Route path="" component={ NotFound } />
-   </Switch>
+      <Switch>
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/shoppingCart" component={ ShoppingCart } />
+        <Route path="" component={ NotFound } />
+      </Switch>
   );
 }
 

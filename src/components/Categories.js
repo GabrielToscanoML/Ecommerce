@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import ProductsContext from "../context/ProductsContext";
 import { getCategories } from '../services/api';
+
 
 function Categories() {
 
+  const data = useContext(ProductsContext);
+  console.log(data);
   const [categoriesData, setCategoriesData] = useState([]);
 
   const requestCategoriesData = async () => {
@@ -12,7 +16,7 @@ function Categories() {
 
   useEffect(() => {
     requestCategoriesData();
-  }, [categoriesData]);
+  }, []);
 
   return (
     <main>
@@ -25,7 +29,7 @@ function Categories() {
                   <li>
                     <button
                       type="button"
-                      onClick={ () => this.handleClick(element.id, element.name) }
+                      onClick={ () => data.requestProductsData(element.id, element.name) }
                     >
                       {element.name}
                     </button>
