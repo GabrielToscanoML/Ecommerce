@@ -20,27 +20,23 @@ function Categories() {
 
   return (
     <aside className="categories-content">
-      <ul>
-        {
-          categoriesData.map((element, index) => {
-            if (index >= 0) {
-              return (
-                <div key={ element.name }>
-                  <li>
-                    <button
-                      type="button"
-                      onClick={ () => data.requestProductsData(element.id, element.name) }
-                    >
-                      {element.name}
-                    </button>
-                  </li>
-                </div>
-              );
-            }
-            return null;
-          })
-        }
-      </ul>
+      {
+        categoriesData.map((element, index) => {
+          if (index >= 0) {
+            return (
+              <div key={ element.name } className="categories-item">
+                <span
+                  className="categories-span"
+                  onClick={ () => data.requestProductsData(element.id, element.name) }
+                >
+                  {element.name}
+                </span>
+              </div>
+            );
+          }
+          return null;
+        })
+      }
     </aside>
   );
 }

@@ -15,7 +15,7 @@ function ProductsList() {
           products.map((element, index) => {
            if(index >= 0) {
             return (
-              <div key={ element.id }>
+              <div key={ element.id } className="card-item">
                 <ProductCard 
                   title={ element.title }
                   thumbnail={ element.thumbnail }
