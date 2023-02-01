@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductsContext from "../context/ProductsContext";
 import { getCategories } from '../services/api';
+import "../styles/homepage.css";
 
 
 function Categories() {
@@ -18,7 +19,7 @@ function Categories() {
   }, []);
 
   return (
-    <main>
+    <aside className="categories-content">
       <ul>
         {
           categoriesData.map((element, index) => {
@@ -40,7 +41,7 @@ function Categories() {
           })
         }
       </ul>
-    </main>
+    </aside>
   );
 }
 

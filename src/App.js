@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import ShoppingCart from './components/ShoppingCart';
+import "./styles/globalConfig.css";
 
 function App() {
   return (
