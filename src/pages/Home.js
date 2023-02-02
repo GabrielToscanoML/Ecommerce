@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ProductsContext from "../context/ProductsContext";
 import { getProductsFromCategoryAndQuery } from "../services/api";
-import Categories from "./Categories";
-import Header from "./Header";
-import ProductsList from "./ProductsList";
+import Categories from "../components/Categories";
+import Header from "../components/Header";
+import ProductsList from "../components/ProductsList";
 import "../styles/homepage.css"
 
 function Home() {

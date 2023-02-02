@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   return (
     <div className="card">
+      <Link
+        to={ `/ProductInfo/${props.id}` }
+        frete={ props.frete }
+      >
+        Detalhes do produto
+      </Link>
        <img
             src={ props.thumbnail }
             alt={ props.title }
