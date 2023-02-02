@@ -2,6 +2,36 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProductCard(props) {
+
+  
+  const verifyExistence = (itemsSaved, id) => {
+    console.log(itemsSaved.find((elemento) => elemento.id === id));
+  }
+
+  const addToLocalStorage = (title, thumbnail, price, id) => {
+    const itemsSaved = JSON.parse(localStorage.getItem('CartItems'));
+    console.log(verifyExistence(itemsSaved, id));
+    if (verifyExistence(itemsSaved, id)) {
+      itemsSaved.forEach((item) => {
+        if(item.id === id) item.count += 1;
+      });
+    } else {
+        const newProduct = {
+          title,
+          thumbnail,
+          price,
+          id,
+          value: id,
+          count: 1,
+        };
+        if (!JSON.parse(localStorage.getItem('CartItems'))) {
+          localStorage.setItem('CartItems', JSON.stringify([]));
+        }
+        const newCartItens = [...itemsSaved, newProduct];
+        localStorage.setItem('CartItems', JSON.stringify(newCartItens));
+      }
+    }
+
   return (
     <div className="card">
       <Link
@@ -23,7 +53,11 @@ function ProductCard(props) {
           <span class="text-title">${ props.price }</span>
           <button
             class="card-button"
-            onClick={() => console.log('clicou')}
+            onClick={() => addToLocalStorage(
+              props.title,
+              props.thumbnail,
+              props.price,
+              props.id)}
           >
             Adicionar ao carrinho
           </button>

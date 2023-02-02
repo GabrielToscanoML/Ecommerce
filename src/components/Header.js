@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
 import ShoppingCartIcon from '../images/shoppingCart.svg';
 import MLIcon from '../images/mercado-livre.svg';
 import '../styles/header.css';
 
 function Header() {
+
+  const [cartItensCount, setCartItensCount] = useState(0);
+  const itemsSaved = JSON.parse(localStorage.getItem('CartItems'));
+
+  useEffect(() => {
+    setCartItensCount(itemsSaved.length);
+  }, [])
+
   const history = useHistory();
   return (
     <header className="header">
@@ -25,7 +33,7 @@ function Header() {
           heigth="35px"
           onClick={ () => history.push('/shoppingCart') }
         />
-        <span className="cart-itens-count">{ 0 }</span>
+        <span className="cart-itens-count">{ cartItensCount }</span>
       </section>
     </header>
   );
