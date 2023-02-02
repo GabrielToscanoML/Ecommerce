@@ -14,7 +14,12 @@ function ProductCard(props) {
         </div>
         <div class="card-footer">
           <span class="text-title">${ props.price }</span>
-          <div class="card-button">button</div>
+          <button
+            class="card-button"
+            onClick={() => console.log('clicou')}
+          >
+            Adicionar ao carrinho
+          </button>
         </div>
         {(props.frete.free_shipping) && <p>Frete Grátis</p>}
     </div>

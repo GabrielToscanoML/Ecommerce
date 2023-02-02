@@ -37,20 +37,3 @@ function ProductsList() {
 }
 
 export default ProductsList;
-
-/*
-const frete = element.shipping.free_shipping;
-            if (index >= 0) {
-              return (
-                <div key={ element.id }>
-                  <li>
-                    <p>{ element.title }</p>
-                    <p>{ element.id }</p>
-                    <img src={ element.thumbnail } alt={ element.title } />
-                    <p>{ element.price }</p>
-                   {frete && <p data-testid="free-shipping">Frete Grátis</p>}
-                  </li>
-                </div>
-              );
-            }
-             */
